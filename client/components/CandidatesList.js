@@ -2,8 +2,9 @@ import { useState, useEffect } from 'react'
 import { GET_CADIDATES } from '../config/env'
 import { Icon } from '@iconify/react'
 import Avatar from '../assets/default-avatar.jpg'
+import { Link } from 'react-router-dom'
 
-export default function CandidatesList() {
+export default function CandidatesList(props) {
 	const [data, setData] = useState([])
 
 	useEffect(() => {
@@ -40,9 +41,13 @@ export default function CandidatesList() {
 								{c.votes} votos
 							</div>
 							<div className="btn-votes">
-								<buttom className="button" onClick={() => {}}>
+								<Link
+									to={`/voted/${c.name.split(' ')[0]}`}
+									className="button"
+									onClick={() => props.vote(c.id)}
+								>
 									Votar
-								</buttom>
+								</Link>
 							</div>
 						</div>
 					))}
