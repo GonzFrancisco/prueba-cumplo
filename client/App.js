@@ -7,7 +7,7 @@ function App() {
 		<BrowserRouter>
 			<TopBar />
 			<Switch>
-				<Route path="/voted" component={MsgVote} />
+				<Route path="/voted/:name" component={MsgVote} />
 				<Route path="/waiting" component={Waiting} />
 				<Route path="/timeout" component={TimeOut} />
 				<Route path="/" component={CandidatesList} />

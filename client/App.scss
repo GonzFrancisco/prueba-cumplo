@@ -205,3 +205,41 @@ html {
 		}
 	}
 }
+
+.messages {
+	background: rgb(17, 119, 53);
+	background: radial-gradient(
+		circle,
+		rgba(17, 119, 53, 1) 0%,
+		rgba(46, 56, 60, 1) 51%
+	);
+	display: flex;
+	min-height: calc(100vh - 46px);
+	justify-content: center;
+	align-items: center;
+}
+
+.msgvote {
+	display: flex;
+	flex-direction: column;
+	img {
+		margin-bottom: 15px;
+	}
+	.title {
+		display: flex;
+		font-size: 2em;
+		font-weight: bold;
+		margin-bottom: 15px;
+	}
+
+	.content {
+		font-size: 1.2em;
+		letter-spacing: 1px;
+		text-align: center;
+		.name {
+			font-size: 1.2em;
+			color: $primary-color;
+			font-weight: bold;
+		}
+	}
+}
