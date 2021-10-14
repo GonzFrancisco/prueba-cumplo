@@ -243,3 +243,26 @@ html {
 		}
 	}
 }
+
+.waiting {
+	display: flex;
+	flex-direction: column;
+	.title {
+		display: flex;
+		margin-bottom: 15px;
+		.text {
+			color: $primary-color;
+			font-size: 2em;
+			font-weight: bold;
+		}
+
+		.icon {
+			font-size: 2em;
+		}
+	}
+
+	.content {
+		font-size: 1.2em;
+		letter-spacing: 1px;
+	}
+}
