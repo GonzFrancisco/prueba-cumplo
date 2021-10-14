@@ -1,8 +1,15 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import { TopBar, CandidatesList, MsgVote, TimeOut, Waiting } from './components'
 import { useLocalStorge } from './Hooks/useLocalStorge'
 import { POST_VOTE, GET_WINNER } from './config/env'
 import './App.scss'
+import {
+	Splash,
+	TopBar,
+	CandidatesList,
+	MsgVote,
+	TimeOut,
+	Waiting,
+} from './components'
 
 function App() {
 	const [vote, setVote] = useLocalStorge('vote', false)

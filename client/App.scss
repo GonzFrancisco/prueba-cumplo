@@ -320,3 +320,31 @@ html {
 		}
 	}
 }
+
+.splash {
+	background-image: url('./assets/splash-movil.png');
+	background-size: cover;
+	background-position: right;
+	display: flex;
+	min-height: 100vh;
+	justify-content: center;
+	align-items: center;
+
+	.logo {
+		background-image: url('./assets/logocumplo-movil.png');
+		background-position: center;
+		background-repeat: no-repeat;
+		width: 70%;
+		height: 300px;
+	}
+}
+
+@media screen and (min-width: 900px) {
+	.splash {
+		background-image: url('./assets/splash.jpg');
+
+		.logo {
+			background-image: url('./assets/logocumplo.png');
+		}
+	}
+}
