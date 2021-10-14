@@ -50,7 +50,7 @@ function App() {
 					</Route>
 				</Switch>
 			) : (
-				<TimeOut />
+				<TimeOut winner={winner} />
 			)}
 		</BrowserRouter>
 	)
