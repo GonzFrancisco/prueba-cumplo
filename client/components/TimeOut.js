@@ -1,7 +1,9 @@
 export default function TimeOut(props) {
 	const { name, store, votes } = props.winner
+	let animate = props.animate === undefined ? 'animated' : ''
+
 	return (
-		<div className="messages timeout">
+		<div className={`${animate} messages timeout`}>
 			<div className="pretitle">El empleado del mes es</div>
 			<div className="title">{name}</div>
 			<div className="location">{store}</div>

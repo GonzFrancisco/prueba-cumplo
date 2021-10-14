@@ -12,6 +12,7 @@ import {
 } from './components'
 
 function App() {
+	const [splash, setSplash] = useLocalStorge('splash', true)
 	const [vote, setVote] = useLocalStorge('vote', false)
 	const [timeout, setTimeout] = useLocalStorge('timeout', false)
 	const [winner, setWinner] = useLocalStorge('winner', {})
@@ -45,19 +46,29 @@ function App() {
 			.catch(e => console.error(e))
 	}
 
+	const stopSplash = () => {
+		setSplash(false)
+	}
+
 	return (
 		<BrowserRouter>
-			<TopBar timeout={evalTime} />
-			{!timeout ? (
-				<Switch>
-					<Route path="/voted/:name" component={MsgVote} />
-					<Route path="/waiting" component={Waiting} />
-					<Route path="/">
-						{!vote ? <CandidatesList vote={voting} /> : <Waiting />}
-					</Route>
-				</Switch>
+			{splash ? (
+				<Splash stop={stopSplash} />
 			) : (
-				<TimeOut winner={winner} />
+				<>
+					<TopBar timeout={evalTime} />
+					{!timeout ? (
+						<Switch>
+							<Route path="/voted/:name" component={MsgVote} />
+							<Route path="/waiting" component={Waiting} />
+							<Route path="/">
+								{!vote ? <CandidatesList vote={voting} /> : <Waiting />}
+							</Route>
+						</Switch>
+					) : (
+						<TimeOut winner={winner} />
+					)}
+				</>
 			)}
 		</BrowserRouter>
 	)
