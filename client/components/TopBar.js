@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { GET_COUNTDOWN } from '../config/env'
 import logo from '../assets/logocumplo-vertical.png'
 
-export default function TopBar() {
+export default function TopBar(props) {
 	const [time, setTime] = useState(0)
 	const [countdown, setCountdown] = useState({ minutes: '00', seconds: '00' })
 	const [runtime, setRuntime] = useState(true)
@@ -27,6 +27,8 @@ export default function TopBar() {
 						console.error(e)
 					})
 			}, 1000)
+		} else {
+			props.timeout()
 		}
 	}, [time])
 
