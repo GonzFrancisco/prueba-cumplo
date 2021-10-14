@@ -1,0 +1,47 @@
+html {
+	font-family: sans-serif;
+	box-sizing: content-box;
+	color: #ffffff;
+	background-color: #353f47;
+}
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
+	box-sizing: inherit;
+}
+
+.topbar {
+	background-color: #3bc638;
+	display: flex;
+	justify-content: center;
+	padding: 10px;
+
+	.container {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		width: 100%;
+		max-width: 1130px;
+		margin: 0 auto;
+	}
+
+	.logo {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.countdown {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		.watch {
+			font-size: 1.4em;
+		}
+	}
+}

@@ -1,5 +1,8 @@
+import TopBar from './components/TopBar'
+import './App.scss'
+
 function App() {
-	return <h1>Prueba Cumplo</h1>
+	return <TopBar />
 }
 
 export default App
